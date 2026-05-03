@@ -114,6 +114,7 @@ body {
 
 .myform input[type="name"],
 .myform input[type="text"],
+.myform input[type="password"],
 .myform input[type="tel"],
 .myform input[type="email"],
 .myform input[type="date"],
