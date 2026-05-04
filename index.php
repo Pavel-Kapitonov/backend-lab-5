@@ -56,7 +56,7 @@ setcookie('values', '', 100000, '/');
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Форма Лаба 4</title>
+    <title>Форма Лаба 5</title>
     <link rel="stylesheet" href="css/main.css">
     <style>
         .error { border: 2px solid red; background-color: #ffe6e6; }
