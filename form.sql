@@ -1,12 +1,17 @@
+SET FOREIGN_KEY_CHECKS = 0;
+
+DROP TABLE IF EXISTS Connection;
+DROP TABLE IF EXISTS Users;
+DROP TABLE IF EXISTS Language;
+DROP TABLE IF EXISTS Request;
+
 CREATE TABLE Language (
-    language_id INT PRIMARY KEY,
+    language_id INT AUTO_INCREMENT PRIMARY KEY,
     language_name VARCHAR(50) NOT NULL
 );
 
-INSERT INTO Language (language_name) VALUES ('Pascal'), ('C'), ('C++'), ('JavaScript'), ('PHP'), ('Python'), ('Java'), ('Haskell'), ('Clojure'), ('Prolog'), ('Scala');
-
 CREATE TABLE Request (
-    request_id INT PRIMARY KEY,
+    request_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
     tel VARCHAR(20) NOT NULL,
     email VARCHAR(255) NOT NULL,
@@ -24,7 +29,6 @@ CREATE TABLE Connection (
     FOREIGN KEY (language_id) REFERENCES Language(language_id) ON DELETE CASCADE
 );
 
-
 CREATE TABLE Users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     request_id INT NOT NULL,
@@ -32,3 +36,9 @@ CREATE TABLE Users (
     password_hash VARCHAR(255) NOT NULL,
     FOREIGN KEY (request_id) REFERENCES Request(request_id) ON DELETE CASCADE
 );
+
+INSERT INTO Language (language_name) VALUES 
+('Pascal'), ('C'), ('C++'), ('JavaScript'), ('PHP'), 
+('Python'), ('Java'), ('Haskell'), ('Clojure'), ('Prolog'), ('Scala');
+
+SET FOREIGN_KEY_CHECKS = 1;
