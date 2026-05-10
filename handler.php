@@ -39,7 +39,7 @@ if (empty($languages)) {
     $errors['languages'] = "Ошибка: данные должны быть массивом";
 } else {
     foreach ($languages as $lang) {
-        if (!preg_match('/^Значение\d+$/', $lang)) {
+        if (!preg_match('/^[a-zA-Z0-9\+\#\-\s]+$/u', $lang)) {
             $errors['languages'] = "Недопустимое значение в поле выбора языков";
             break;
         }
