@@ -137,7 +137,13 @@ setcookie('values', '', 100000, '/');
                 <label>Любимые языки:</label>
                 <select name="languages[]" multiple class="<?= isset($errors['languages']) ? 'error' : '' ?>">
                     <?php
-                    $langs = ['Значение1'=>'Pascal', 'Значение2'=>'C', 'Значение3'=>'C++', 'Значение4'=>'JS', 'Значение5'=>'PHP'];
+                    $langs = [
+                        'Pascal' => 'Pascal', 
+                        'C' => 'C', 
+                        'C++' => 'C++', 
+                        'JavaScript' => 'JS',
+                        'PHP' => 'PHP'
+                    ];
                     foreach ($langs as $v => $l) {
                         $selected = in_array($v, (array)$values['languages']) ? 'selected' : '';
                         echo "<option value='$v' $selected>$l</option>";
